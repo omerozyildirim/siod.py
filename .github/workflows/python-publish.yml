@@ -6,9 +6,9 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: siod.py
+name: Publish Python 🐍 distributions 📦 to PyPI and TestPyPI
 
-on:
+on: push
   release:
     types: [published]
 
@@ -16,12 +16,12 @@ permissions:
   contents: read
 
 jobs:
-  deploy:
-
+  build-n-publish:
+    name: Build and publish Python 🐍 distributions 📦 to PyPI and TestPyPI
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@master
     - name: Set up Python
       uses: actions/setup-python@v3
       with:
